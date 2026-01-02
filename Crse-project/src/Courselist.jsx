@@ -8,14 +8,20 @@ function CourseList() {
     const [isCartOpen, setIsCartOpen] = useState(false);
    const[courseing,setcourse]  =  useState([]);
    const [searchallcourse,searchAllcourse] = useState([]);
+   const [err,seterr] = useState(null)
    useEffect(() => {
 
         fetch('http://localhost:8080/courses').then(res=>res.json()).then(json=>{
             setcourse(json) ;
             searchAllcourse(json);
             
+        }).catch(error => {
+            console.log(error.message);
+            seterr(error);
+        
         })
    },[]);
+   
     // function DeleteCourse(id){
     //   const filteredCourses = courseing.filter((course) => course.id !== id);
     //  setcourse ([...filteredCourses]);
@@ -34,12 +40,13 @@ function CourseList() {
         const searchText = event.target.value.toLowerCase();
         const filteredCourses = searchallcourse.filter((course) =>
             course.name.toLowerCase().includes(searchText));
-        
-        
-        setcourse([...filteredCourses]);
-        
-        
+            
+                setcourse([...filteredCourses]);
+                
+
     }
+
+
       const addToCart = (course) => {
         
         setCartItems([...cartItems, course]);
