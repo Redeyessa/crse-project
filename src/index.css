@@ -1,0 +1,30 @@
+.Course{
+  background-color: rgb(0, 190, 190);
+  width: 200px;
+  border: 1px;
+  border-style: solid;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  display: inline-block;
+}
+.Course:hover{
+  box-shadow: 0 0 10px gray;
+  transform: scale(1.05);
+  transition: 0.3s ease-in-out;
+}
+button{
+  background-color: rgb(162, 0, 255);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover{
+  background-color: purple;
+  color: white;
+  scale: 1.1;
+  transition: 0.5s;
+}
+
