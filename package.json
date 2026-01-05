@@ -1,13 +1,12 @@
 {
-  "homepage": "https://redeyessa.github.io/crse-project/Crse-project",
+  "homepage": "https://redeyessa.github.io/crse-project/",
   "name": "crse-project",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "predepoly": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
